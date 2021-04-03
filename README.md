@@ -22,6 +22,14 @@ Malice AVG AntiVirus
 ```
 docker run --rm malice/avg EICAR
 ```
+#test4: run bash inside container
+### Or link your own malware folder and run original avgscan:
+
+```bash
+docker run --rm -v /path/to/malware:/malware:ro -it --entrypoint /bin/bash malice/avg
+docker run --rm -v /mnt/c/temp/av_tests:/malware:ro -it --entrypoint /bin/bash malice/avg
+avgscan
+```
 
 ### Or link your own malware folder:
 
